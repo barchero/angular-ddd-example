@@ -1,0 +1,88 @@
+<div id="content">
+    <div class="row">
+        <sa-big-breadcrumbs [items]="['Table', 'Data Tables']" icon="table"
+            class="col-xs-12 col-sm-7 col-md-7 col-lg-4"></sa-big-breadcrumbs>
+    </div>
+
+    <sa-widgets-grid>
+
+
+        <div class="row">
+            <article class="col-sm-12">
+
+                <div sa-widget [editbutton]="false" color="blueDark">
+                    <header>
+                        <span class="widget-icon"> 
+                            <i class="fa fa-table"></i> 
+                        </span>
+                        <h2>Column Filters</h2>
+                    </header>
+                    <div>
+                        <div class="widget-body no-padding" *ngIf="options">
+                            <app-commerces-list-table-component [commerces]="commerces"></app-commerces-list-table-component>
+                            <div class="smart-form">
+                                <footer>
+                                    <button class="btn btn-primary" type="button" (click)="createCommerce()">Crear comercios</button>
+                                </footer>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </article>
+
+
+        </div>
+
+        <div class="row">
+            <article class="col-sm-12">
+
+                <div sa-widget [editbutton]="false" color="blueDark">
+                    <header>
+                        <span class="widget-icon"> 
+                            <i class="fa fa-table"></i> 
+                        </span>
+                        <h2>Column Filters</h2>
+                    </header>
+                    <div>
+                        <div class="widget-body no-padding" *ngIf="options">
+                            <sa-datatable [options]="options" filter="true" tableClass="table table-condenced table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th class="hasinput" [ngStyle]="{width:'20%'}">
+                                            <input type="text" class="form-control" disabled="disabled"/>
+                                        </th>
+                                        <th class="hasinput" [ngStyle]="{width:'50%'}">
+                                            <input type="text" class="form-control" placeholder="Filter Name" />
+                                        </th>
+                                        <th class="hasinput" [ngStyle]="{width:'10%'}">
+                                            <input type="text" class="form-control" placeholder="Filter RegNumber" />
+                                        </th>
+                                        <th class="hasinput" [ngStyle]="{width:'10%'}">
+                                            <input type="text" class="form-control" disabled="disabled"/>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Name</th>
+                                        <th>RegNumber</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                            </sa-datatable>
+                            <div class="smart-form">
+                                <footer>
+                                    <button class="btn btn-primary" type="button" (click)="createCommerce()">Crear comercios</button>
+                                </footer>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </sa-widgets-grid>
+</div>

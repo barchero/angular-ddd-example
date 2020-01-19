@@ -1,0 +1,59 @@
+<!-- MAIN CONTENT -->
+<div id="content">
+    <div class="row">
+        <sa-big-breadcrumbs [items]="['Forms', 'Form Layouts']" icon="pencil-square-o"
+            class="col-xs-12 col-sm-9 col-md-9 col-lg-9"></sa-big-breadcrumbs>
+    </div>
+
+    <!-- widget grid -->
+
+    <sa-widgets-grid>
+
+
+        <!-- START ROW -->
+
+        <div class="row">
+
+            <!-- NEW COL START -->
+            <article class="col-xs-12">
+
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div sa-widget [editbutton]="false" [custombutton]="false">
+
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+
+                        <h2>Checkout Form </h2>
+
+                    </header>
+
+                    <!-- widget div-->
+                    <div>
+
+                        <!-- widget content -->
+                        <div class="widget-body no-padding">
+
+                            <app-commerces-details-form-component [commerce]="commerce" (saveCommerce)="saveCommerce($event)"></app-commerces-details-form-component>
+
+                        </div>
+                        <!-- end widget content -->
+
+                    </div>
+                    <!-- end widget div -->
+
+                </div>
+                <!-- end widget -->
+                
+            </article>
+            <!-- END COL -->
+
+        </div>
+
+        <!-- END ROW -->
+
+    </sa-widgets-grid>
+
+    <!-- end widget grid -->
+
+
+</div>

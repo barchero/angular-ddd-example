@@ -1,0 +1,37 @@
+<form id="checkout-form" class="smart-form" novalidate="novalidate" [formGroup]="form" (ngSubmit)="_saveCommerce()">
+        <ng-container *ngIf="commerce">
+            <fieldset>
+                <div class="row">
+                    <section class="col col-3">
+                        <label class="input">
+                            <i class="icon-prepend fa fa-user"></i>
+                            <input type="text" name="regNumber" formControlName="regNumber" placeholder="Reg Number">
+                        </label>
+                    </section>
+                    <section class="col col-9">
+                        <label class="input">
+                            <i class="icon-prepend fa fa-user"></i>
+                            <input type="text" name="name" formControlName="name" placeholder="Commerce name">
+                        </label>
+                    </section>
+                </div>
+            </fieldset>
+        </ng-container>
+
+        <fieldset *ngIf="!commerce && !commerceNotFound" class="text-center">
+            <h2>Loading...</h2>
+        </fieldset>
+
+        <fieldset *ngIf="!commerce && commerceNotFound" class="text-center">
+            <h2>Commerce not found</h2>
+        </fieldset>
+
+        <footer>
+            <button type="submit" *ngIf="commerce" class="btn btn-primary" [disabled]="!form.valid">
+                Save
+            </button>
+            <button type="button" class="btn btn-danger" [routerLink]="['/commerces']">
+                Cancel
+            </button>
+        </footer>
+    </form>

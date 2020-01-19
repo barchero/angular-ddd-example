@@ -1,0 +1,5 @@
+<input type="text" placeholder="Usuario" [(ngModel)]="loginDto.loginName">
+<input type="password" placeholder="Password" [(ngModel)]="loginDto.password">
+<button (click)="login()">Login</button>
+<br>
+{{error}}

@@ -1,0 +1,20 @@
+<div id="content">
+    <div class="row">
+        <sa-big-breadcrumbs [items]="['Home']" icon="home"
+                            class="col-xs-12 col-sm-7 col-md-7 col-lg-4"></sa-big-breadcrumbs>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div  class="well">
+                {{offer?.title}}
+                <h1>Alta oferta</h1>
+                <div *ngIf="offer">
+                    <input type="text" [(ngModel)]="offer.title">
+                </div>
+                <div>
+                    <button (click)="refresh">click!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
